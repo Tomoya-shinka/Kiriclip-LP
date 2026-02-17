@@ -130,11 +130,11 @@ export function FeaturesCarousel({
   return (
     <div className="flex w-full justify-center px-4 py-4" ref={containerRef}>
       {/* 矢印を枠の relative 親に閉じ、青枠のセンター配置が崩れないようにする */}
-      <div className="relative w-[95%] max-w-4xl overflow-visible">
-        {/* 枠（Viewport）: カードと1:1で重なる */}
+      <div className="relative w-[95%] max-w-4xl overflow-visible md:max-w-[800px] md:w-[800px]">
+        {/* 枠（Viewport）: スマホは縦長・PCはコンパクト固定（800×420） */}
         <div
           ref={viewportRef}
-          className="relative box-border h-auto w-full min-h-[650px] overflow-hidden rounded-xl border-2 border-[#00c0ff] md:min-h-[400px] md:aspect-[4/3]"
+          className="relative box-border h-auto w-full min-h-[650px] overflow-hidden rounded-xl border-2 border-[#00c0ff] md:h-[420px] md:min-h-0 md:w-[800px]"
         >
           <motion.div
             className="relative flex h-full w-full items-center justify-center box-border"
@@ -182,20 +182,20 @@ export function FeaturesCarousel({
                     transition={SLIDE_EASE}
                   >
                     {/* テキストブロック: スマホ上（order-1）・PC右（order-2） */}
-                    <div className="order-1 flex w-full flex-shrink-0 flex-col justify-center overflow-hidden p-6 text-center md:order-2 md:w-1/2 md:border-l md:border-[#e5e7eb] md:p-8 md:text-left">
+                    <div className="order-1 flex w-full flex-shrink-0 flex-col justify-center overflow-hidden p-6 text-center md:order-2 md:w-1/2 md:border-l md:border-[#e5e7eb] md:p-5 md:text-left">
                       <span
-                        className="mb-2 inline-block text-2xl font-bold tabular-nums tracking-tight text-[#00c0ff] drop-shadow-sm sm:text-3xl"
+                        className="mb-2 inline-block text-2xl font-bold tabular-nums tracking-tight text-[#00c0ff] drop-shadow-sm sm:text-3xl md:text-2xl"
                         style={{ textShadow: "0 0 20px rgba(0, 192, 255, 0.35)" }}
                         aria-hidden
                       >
                         {String(cardNumber).padStart(2, "0")}
                       </span>
-                      <h4 className="text-base font-semibold leading-tight text-[#171717] sm:text-lg">{card.title}</h4>
+                      <h4 className="text-base font-semibold leading-tight text-[#171717] sm:text-lg md:text-base">{card.title}</h4>
                       <p className="mt-2 text-sm leading-snug text-[#555]">{card.desc}</p>
                     </div>
                     {/* 画像モックアップブロック: スマホ下（order-2）・PC左（order-1）。object-contain 相当で枠内に収める */}
-                    <div className="order-2 flex min-h-[320px] w-full flex-1 flex-shrink-0 flex-col items-center justify-center overflow-hidden bg-[#f9fafb] p-4 md:order-1 md:min-h-0 md:w-1/2 md:p-8">
-                      <div className="flex h-full w-full min-h-0 items-center justify-center overflow-auto">
+                    <div className="order-2 flex min-h-[320px] w-full flex-1 flex-shrink-0 flex-col items-center justify-center overflow-hidden bg-[#f9fafb] p-4 md:order-1 md:min-h-0 md:w-1/2 md:p-5">
+                      <div className="flex h-full w-full min-h-0 items-center justify-center overflow-hidden">
                         <div className="flex max-h-full max-w-full items-center justify-center">
                           {renderCardContent(card)}
                         </div>

@@ -244,7 +244,7 @@ export default function Home() {
                             <span>User</span>
                           </div>
                         </aside>
-                        <main className="flex min-w-0 flex-1 flex-col overflow-auto p-3">
+                        <main className="flex min-w-0 flex-1 flex-col overflow-hidden p-3">
                           <div className="mb-3 grid grid-cols-3 gap-2">
                             <div className="rounded-xl border border-[#e2e8f0] bg-white p-2.5 text-center shadow-sm">
                               <p className="text-[9px] text-[#64748b]">今月の納品数</p>
@@ -316,7 +316,7 @@ export default function Home() {
                             <span>User</span>
                           </div>
                         </aside>
-                        <main className="flex min-w-0 flex-1 flex-col overflow-auto p-3">
+                        <main className="flex min-w-0 flex-1 flex-col overflow-hidden p-3">
                           <div className="mb-3 grid grid-cols-2 gap-2">
                             <div className="rounded-xl border border-[#e2e8f0] bg-white p-2.5 text-center shadow-sm">
                               <p className="text-[9px] text-[#64748b]">今月の報酬</p>
