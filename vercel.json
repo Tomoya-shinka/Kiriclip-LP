@@ -1,0 +1,5 @@
+{
+  "installCommand": "cd kiriclip-lp && npm install",
+  "buildCommand": "cd kiriclip-lp && npm run build",
+  "outputDirectory": "kiriclip-lp/.next"
+}
