@@ -1,9 +1,18 @@
 # Vercel デプロイ手順
 
-## エラー「ENOENT: no such file or directory, open '.../kiriclip-lp/package.json'」が出る場合
+## 現在の構成（2025年2月）
 
-このリポジトリは **ルートに package.json、その中に Next アプリが `kiriclip-lp/` に入っている** 構成です。  
-Vercel でビルドを通すには、次のいずれかを行ってください。
+**Next.js アプリはリポジトリルートにあります。**  
+（`app/`、`package.json`、`next.config.ts` などがルートにあります。）
+
+Vercel はルートで `npm install` → `npm run build` を実行するため、**追加の Root Directory 設定は不要**です。  
+このルート構成を GitHub にプッシュすれば、そのまま Vercel でビルドできます。
+
+---
+
+## 過去の構成（kiriclip-lp サブフォルダ）でエラーが出ていた場合
+
+以前は **ルートに package.json、Next アプリが `kiriclip-lp/` に入っている** 構成でした。
 
 ---
 
@@ -44,3 +53,33 @@ GitHub のリポジトリが「Next アプリの内容だけがルートにあ�
 
 - **「kiriclip-lp/package.json がない」と言われる**  
   → まずはリポジトリに **`kiriclip-lp` フォルダごと** 含まれているか確認し、含まれていれば **Root Directory を `kiriclip-lp` に設定** するのが確実です。
+
+---
+
+## 警告「Failed to fetch one or more git submodules」が出る場合
+
+この警告は **Git サブモジュールの取得に失敗した** ときに表示されます。ビルド自体は続行されることが多いです。
+
+### サブモジュールを使っていない場合
+
+1. **リポジトリに `.gitmodules` があるか確認**
+   ```bash
+   cat .gitmodules
+   ```
+2. **ある場合で、サブモジュールが不要なら削除**
+   ```bash
+   git submodule deinit -f .
+   git rm -f .gitmodules
+   # サブモジュールだったフォルダが残っていれば、中身を通常のファイルとして追加
+   git add .
+   git commit -m "Remove git submodules"
+   git push
+   ```
+3. **`.gitmodules` がなくても、過去にサブモジュールを追加したことがある場合**
+   - GitHub のリポジトリ → **Settings** → 左の **General** の一番下 **Danger Zone** の上あたりで、サブモジュールの有無を確認
+   - またはローカルで `git submodule status` を実行し、何か表示されればサブモジュールが登録されています。不要なら上記の `deinit` / `git rm .gitmodules` で解除してください。
+
+### サブモジュールを利用している場合
+
+- サブモジュールの URL が **HTTPS** で、Vercel からアクセス可能か確認する（プライベートの場合は Vercel の環境変数やデプロイキーで認証が必要なことがあります）。
+- この警告だけなら **ビルドが成功していれば無視して問題ない** ことも多いです。
