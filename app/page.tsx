@@ -262,7 +262,7 @@ export default function Home() {
                           <p className="mb-2 text-[11px] font-semibold text-[#1e293b]">最近の納品</p>
                           <div className="space-y-2">
                             {[
-                              { title: "【VLOG】札幌開発合宿の裏側", by: "山田", date: "2/15", status: "検収待ち", statusClass: "bg-[#00c0ff]/15 text-[#00c0ff]" },
+                              { title: "【VLOG】26歳起業家の裏側", by: "山田", date: "2/15", status: "検収待ち", statusClass: "bg-[#00c0ff]/15 text-[#00c0ff]" },
                               { title: "Vibe Coding おすすめ拡張機能10選", by: "田中", date: "2/14", status: "検収済み", statusClass: "bg-emerald-100 text-emerald-700" },
                               { title: "【Shorts】バグを一瞬で直した瞬間", by: "佐藤", date: "2/14", status: "バズり審査中", statusClass: "bg-amber-100 text-amber-800" },
                             ].map((row, i) => (
