@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "npm run dev --prefix kiriclip-lp",
+    "build": "npm run build --prefix kiriclip-lp",
+    "start": "npm run start --prefix kiriclip-lp"
+  },
+  "dependencies": {
+    "framer-motion": "^12.34.0",
+    "lucide-react": "^0.564.0"
+  }
+}
