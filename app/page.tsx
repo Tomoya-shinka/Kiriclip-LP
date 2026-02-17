@@ -110,7 +110,7 @@ export default function Home() {
             </span>
           </div>
           <a
-            href="/register"
+            href="https://kiri-clip-lab.vercel.app/"
             className="rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
             style={{ backgroundColor: BRAND }}
           >
@@ -159,7 +159,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
               >
                 <motion.a
-                  href="/register"
+                  href="https://kiri-clip-lab.vercel.app/"
                   className="inline-flex items-center gap-2 rounded-full px-7 py-4 text-lg font-semibold text-white shadow-lg"
                   style={{ backgroundColor: BRAND, boxShadow: "0 10px 40px -10px rgba(0,192,255,0.4)" }}
                   whileHover={{ y: -3, boxShadow: "0 14px 48px -10px rgba(0,192,255,0.45)" }}
@@ -816,7 +816,7 @@ export default function Home() {
                 アカウント登録は無料。納品と報酬管理を、もっとスマートに。
               </p>
                 <motion.a
-                href="/register"
+                href="https://kiri-clip-lab.vercel.app/"
                 className="mt-10 inline-flex items-center gap-2 rounded-full px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-[#00c0ff]/25 transition hover:shadow-[#00c0ff]/35"
                 style={{ backgroundColor: BRAND }}
                 whileHover={{ scale: 1.03 }}
