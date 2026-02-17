@@ -11,7 +11,7 @@ const WINDOW_RADIUS = 2;
 const FALLBACK_WIDTH = 800;
 const FALLBACK_HEIGHT = 420;
 
-const SLIDE_EASE = { type: "tween" as const, duration: 0.35, ease: "easeOut" };
+const SLIDE_EASE = { type: "tween" as const, duration: 0.35, ease: "easeOut" as const };
 
 const cardVariants = {
   enter: ({ direction }: { direction: number }) =>
