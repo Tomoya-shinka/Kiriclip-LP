@@ -8,6 +8,15 @@
 Vercel はルートで `npm install` → `npm run build` を実行するため、**追加の Root Directory 設定は不要**です。  
 このルート構成を GitHub にプッシュすれば、そのまま Vercel でビルドできます。
 
+### 「No Next.js version detected」が出る場合
+
+ルートの **`package.json`** に `next` が **dependencies** または **devDependencies** に入っているか確認してください。入っていないとこのエラーになります。
+
+- ルートの `package.json` の `dependencies` に `"next": "16.1.6"` と `react` / `react-dom` が含まれていること
+- **`package-lock.json` もルートに置き、一緒にコミット・プッシュ**すること（`npm install` で生成されます）
+
+両方コミットしてから再度デプロイしてください。
+
 ---
 
 ## 過去の構成（kiriclip-lp サブフォルダ）でエラーが出ていた場合
